@@ -1,2 +1,2 @@
 # learnyounode
-practice problesm from node school
+practice problems from node school
