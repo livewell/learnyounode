@@ -1,16 +1,18 @@
 var fs = require('fs');
 var path = require('path');
 
-var givenExt = "." + process.argv[3];
-var folder = process.argv[2];
+var filteredLS = function (folder, givenExt, callback) {
+    fs.readdir(folder, function (err, files) {
+        if (err) return console.log(err);
 
-fs.readdir(folder, function (err, files) {
-    if (err) return console.log(err);
+        files.forEach(function (file) {
+            if (path.extname(file) === givenExt) {
+                console.log(file);
+            }
+        });
 
-    files.forEach(function (file) {
-        if (path.extname(file) === givenExt) {
-            console.log(file);
-        }
+        callback(err,files);
     });
-});
+}
 
+exports.filteredLS = filteredLS;
