@@ -5,7 +5,6 @@ module.exports = function (folder, givenExt, callback) {
     //array to store files found in LS
     var foundFiles = [];
 
-
     //reads a directory and return list of files
     fs.readdir(folder, function (err, files) {
         if (err) return callback(err);
