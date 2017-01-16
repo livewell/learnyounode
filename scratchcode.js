@@ -1,11 +1,9 @@
 var testString = "mdtest.file";
+var date = new Date();
+var month = ("0" + (date.getMonth() + 1)).slice(-2);
+var day = ("0" + date.getDate()).slice(-2);
 
-console.log(testString.indexOf("."));
-console.log(testString.substring(testString.indexOf("."), testString.length));
+let customDate = date.getFullYear() + "-" + month + "-" + day
+                + " " + date.getHours() + ":" + date.getMinutes(); 
 
-var list = [1,2,3,4,5,6,7,10,11];
-
-for (var i in list){
-    console.log(list[i] + 1);
-    //console.log(i + 1);
-}
+console.log(customDate);
